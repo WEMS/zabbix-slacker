@@ -1,0 +1,12 @@
+HOST: zabbix.wems.co.uk
+TRIGGER_NAME: Free disk space is less than 10% on volume /
+TRIGGER_STATUS: OK
+TRIGGER_SEVERITY: Warning
+TRIGGER_ID: 15492
+DATETIME: 2018.03.22 / 13:56:33
+ITEM_ID: 28509
+ITEM_NAME: Free disk space on / (percentage)
+ITEM_KEY: vfs.fs.size[/,pfree]
+ITEM_VALUE: 77.18 %
+EVENT_ID: 498
+TRIGGER_URL:

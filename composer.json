@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "\\Wems\\Zabbix": "src/"
+        }
+    },
+    "require": {
+        "cromwell/slacker": "^0.5.0",
+        "vlucas/phpdotenv": "^2.4"
+    }
+}
