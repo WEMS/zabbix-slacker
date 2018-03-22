@@ -6,7 +6,7 @@ use Slacker\Payload\Attachment;
 use Slacker\Payload\Field;
 use Slacker\Slack;
 
-class SlackMessager
+class SlackMessenger
 {
     /** @var Slack */
     private $slack;
