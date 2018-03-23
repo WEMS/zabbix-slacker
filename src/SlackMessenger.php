@@ -53,12 +53,14 @@ class SlackMessenger
             $field = new Field();
             $field->title = $params->USER;
             $field->value = $params->ACK_MESSAGE;
+            $field->short = true;
             $attachment->addField($field);
         }
 
         $field = new Field();
         $field->title = $params->HOST;
         $field->value = 'Severity: ' . $params->TRIGGER_SEVERITY;
+        $field->short = true;
         $attachment->addField($field);
 
         $this->slack->attachment($attachment);

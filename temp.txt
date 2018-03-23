@@ -10,3 +10,6 @@ ITEM_KEY: vfs.fs.size[/,pfree]
 ITEM_VALUE: 77.18 %
 EVENT_ID: 498
 TRIGGER_URL:
+TYPE: ACK
+USER: bcromwell
+ACK_MESSAGE: hello
