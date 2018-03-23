@@ -17,11 +17,19 @@ class SlackMessenger
     /** @var ZabbixUrl */
     private $zabbixUrl;
 
-    public function __construct(Slack $slack, MessageColour $messageColour, ZabbixUrl $zabbixUrl)
-    {
+    /** @var GraphService */
+    private $graphService;
+
+    public function __construct(
+        Slack $slack,
+        MessageColour $messageColour,
+        ZabbixUrl $zabbixUrl,
+        GraphService $graphService
+    ) {
         $this->slack = $slack;
         $this->messageColour = $messageColour;
         $this->zabbixUrl = $zabbixUrl;
+        $this->graphService = $graphService;
     }
 
     public function send(string $channel, string $title, Params $params)
@@ -34,6 +42,12 @@ class SlackMessenger
         $attachment->color = $this->messageColour->deriveFrom($params);
         $attachment->title_link = $this->zabbixUrl->deriveFrom($params);
         $attachment->title = $params->TRIGGER_NAME . ' (' . $params->ITEM_VALUE . ')';
+
+        $this->graphService->setParams($params);
+
+        if ($this->graphService->canProvideGraph()) {
+            $attachment->image_url = $this->graphService->getGraphImageUrl();
+        }
 
         $field = new Field();
         $field->title = $params->HOST;
