@@ -39,7 +39,7 @@ class GraphService
 
     public function canProvideGraph(): bool
     {
-        return true;
+        return $this->params->TYPE !== 'ACK';
     }
 
     public function getGraphImageUrl(): string

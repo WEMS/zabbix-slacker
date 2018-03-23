@@ -14,6 +14,12 @@ namespace Wems\Zabbix;
  * @property $ITEM_KEY
  * @property $ITEM_VALUE
  * @property $EVENT_ID
+ * @property $TYPE
+ * @property $USER
+ * @property $ACK_DATE
+ * @property $ACK_TIME
+ * @property $ACK_MESSAGE
+ * @property $EVENT_STATUS
  */
 class Params implements \ArrayAccess
 {

@@ -49,6 +49,13 @@ class SlackMessenger
             $attachment->image_url = $this->graphService->getGraphImageUrl();
         }
 
+        if ($params->TYPE === 'ACK') {
+            $field = new Field();
+            $field->title = $params->USER;
+            $field->value = $params->ACK_MESSAGE;
+            $attachment->addField($field);
+        }
+
         $field = new Field();
         $field->title = $params->HOST;
         $field->value = 'Severity: ' . $params->TRIGGER_SEVERITY;

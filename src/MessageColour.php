@@ -14,7 +14,7 @@ class MessageColour
 
     public function deriveFrom(Params $params): string
     {
-        if ($params->TRIGGER_STATUS === 'OK') {
+        if ($params->TRIGGER_STATUS === 'OK' || $params->TYPE === 'ACK') {
             return self::GOOD;
         }
 
