@@ -6,10 +6,10 @@ class MessageColour
 {
     // some taken from Zabbix UI, some are Slack standards
     const GOOD = 'good';
-    const INFO = '#7499FF';
+    const INFO = '#43A5EB';
     const WARNING = 'warning';
-    const AVERAGE = '#FFA059';
-    const HIGH = '#E97659';
+    const AVERAGE = '#FFBE3F';
+    const HIGH = '#FF6400';
     const DISASTER = 'danger';
 
     public function deriveFrom(Params $params): string
